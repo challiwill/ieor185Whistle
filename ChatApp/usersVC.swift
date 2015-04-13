@@ -55,6 +55,7 @@ class usersVC: UIViewController, UITableViewDataSource {
         
         otherName = cell.usernameLbl.text!
         otherProfileName = cell.profileNameLbl.text!
+        otherImg = cell.profileImg.image
         self.performSegueWithIdentifier("goToConversationVC", sender: self)
     }
     

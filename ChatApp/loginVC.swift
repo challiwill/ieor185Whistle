@@ -28,6 +28,14 @@ class loginVC: UIViewController {
         passwordTxt.frame = CGRectMake(16, 240, theWidth-32, 30)
         loginBtn.center = CGPointMake(theWidth/2, 330)
         signupBtn.center = CGPointMake(theWidth/2, theHeight-30)
+        
+        //TODO add check to see if already logged in
+        var fbLogin:FBSDKLoginButton = FBSDKLoginButton()
+        fbLogin.center = CGPointMake(theWidth/2, theHeight-100)
+        self.view.addSubview(fbLogin)
+        // TODO add delegate methods
+        // http://www.brianjcoleman.com/tutorial-how-to-use-login-in-facebook-sdk-4-0-for-swift/
+        // fbLogin.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,7 +53,7 @@ class loginVC: UIViewController {
             
             if logInError == nil {
                 println("log in")
-                self.performSegueWithIdentifier("goToUsersVC", sender: self)
+                self.performSegueWithIdentifier("goToTripPlanVC", sender: self)
             } else {
                 println("error log in")
             }

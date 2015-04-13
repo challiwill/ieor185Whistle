@@ -305,4 +305,7 @@ class conversationVC: UIViewController, UIScrollViewDelegate, UITextViewDelegate
         }
     }
 
+    @IBAction func tripCompletedBtn_click(sender: AnyObject) {
+        
+    }
 }
