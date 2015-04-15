@@ -48,8 +48,8 @@ class loginVC: UIViewController {
     }
 
     @IBAction func loginBtn_click(sender: AnyObject) {
-        PFUser.logInWithUsernameInBackground(usernameTxt.text, password: passwordTxt.text) {
-            (user:PFUser!, logInError:NSError!) -> Void in
+        PFUser.logInWithUsernameInBackground(usernameTxt.text!, password: passwordTxt.text!) {
+            (user:PFUser?, logInError:NSError?) -> Void in
             
             if logInError == nil {
                 println("log in")

@@ -91,7 +91,7 @@ class conversationVC: UIViewController, UIScrollViewDelegate, UITextViewDelegate
     
     func keyboardWasShown(notification:NSNotification) {
         let dict:NSDictionary = notification.userInfo!
-        let s:NSValue = dict.valueForKey(UIKeyboardFrameEndUserInfoKey) as NSValue
+        let s:NSValue = dict.valueForKey(UIKeyboardFrameEndUserInfoKey) as! NSValue
         let rect:CGRect = s.CGRectValue()
         
         UIView.animateWithDuration(0.3, delay: 0, options: .CurveLinear, animations: {
@@ -107,7 +107,7 @@ class conversationVC: UIViewController, UIScrollViewDelegate, UITextViewDelegate
     
     func keyboardWillHide(notification:NSNotification) {
         let dict:NSDictionary = notification.userInfo!
-        let s:NSValue = dict.valueForKey(UIKeyboardFrameEndUserInfoKey) as NSValue
+        let s:NSValue = dict.valueForKey(UIKeyboardFrameEndUserInfoKey) as! NSValue
         let rect:CGRect = s.CGRectValue()
         
         UIView.animateWithDuration(0.3, delay: 0, options: .CurveLinear, animations: {
@@ -133,27 +133,27 @@ class conversationVC: UIViewController, UIScrollViewDelegate, UITextViewDelegate
         var objects = query.findObjects()
         
         self.resultsImageFiles.removeAll(keepCapacity: false)
-        for object in objects {
+        for object in objects! {
             
-            self.resultsImageFiles.append(object["photo"] as PFFile)
+            self.resultsImageFiles.append(object["photo"] as! PFFile)
             self.resultsImageFiles[0].getDataInBackgroundWithBlock {
-                (imageData:NSData!, error:NSError!) -> Void in
+                (imageData:NSData?, error:NSError?) -> Void in
                 
                 if error == nil {
-                    self.myImg = UIImage(data: imageData)
+                    self.myImg = UIImage(data: imageData!)
                     
                     var query2 = PFQuery(className: "_User")
                     query2.whereKey("username", equalTo: otherName)
                     var objects2 = query2.findObjects()
                     
                     self.resultsImageFiles2.removeAll(keepCapacity: false)
-                    for object in objects2 {
-                        self.resultsImageFiles2.append(object["photo"] as PFFile)
+                    for object in objects2! {
+                        self.resultsImageFiles2.append(object["photo"] as! PFFile)
                         self.resultsImageFiles2[0].getDataInBackgroundWithBlock {
-                            (imageData:NSData!, error:NSError!) -> Void in
+                            (imageData:NSData?, error:NSError?) -> Void in
                             
                             if error == nil {
-                                self.otherImg = UIImage(data:imageData)
+                                self.otherImg = UIImage(data:imageData!)
                                 self.refreshResults()
                             }
                             
@@ -187,12 +187,12 @@ class conversationVC: UIViewController, UIScrollViewDelegate, UITextViewDelegate
         var query = PFQuery.orQueryWithSubqueries([innerQ1, innerQ2])
         query.addAscendingOrder("createdAt")
         query.findObjectsInBackgroundWithBlock {
-            (objects:[AnyObject]!, error:NSError!) -> Void in
+            (objects:[AnyObject]?, error:NSError?) -> Void in
             
             if error == nil {
-                for object in objects {
-                    self.senderArray.append(object.objectForKey("sender") as String)
-                    self.messageArray.append(object.objectForKey("message") as String)
+                for object in objects! {
+                    self.senderArray.append(object.objectForKey("sender") as! String)
+                    self.messageArray.append(object.objectForKey("message") as! String)
                 }
                 
                 for subView in self.resultsScrollView.subviews {
@@ -293,7 +293,7 @@ class conversationVC: UIViewController, UIScrollViewDelegate, UITextViewDelegate
             messageDBTable["other"] = otherName
             messageDBTable["message"] = self.messageTextView.text
             messageDBTable.saveInBackgroundWithBlock {
-                (success:Bool!, error:NSError!) -> Void in
+                (success:Bool, error:NSError?) -> Void in
                 
                 if success == true {
                     println("message sent")

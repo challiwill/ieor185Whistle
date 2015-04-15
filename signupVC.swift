@@ -50,7 +50,7 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
     }
 
     // assigns chosen image to profile image var
-    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
         
         profileImg.image = image
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -65,7 +65,7 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
     }
 
     // returns from keyboard when click away from keyboard
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         self.view.endEditing(true)
     }
     
@@ -114,7 +114,7 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
         user["photo"] = imageFile
         
         user.signUpInBackgroundWithBlock {
-            (succeeded:Bool!, signUpError:NSError!) -> Void in
+            (succeeded:Bool, signUpError:NSError?) -> Void in
             if signUpError == nil {
                 println("signup")
                 self.performSegueWithIdentifier("goToTripPlanVC2", sender: self)

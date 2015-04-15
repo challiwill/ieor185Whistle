@@ -24,7 +24,7 @@ class usersVC: UIViewController, UITableViewDataSource {
         
         resultsTable.frame = CGRectMake(0, 0, theWidth, theHeight-64)
         
-        userName = PFUser.currentUser().username
+        userName = PFUser.currentUser()!.username!
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,18 +41,17 @@ class usersVC: UIViewController, UITableViewDataSource {
         var query = PFQuery(className: "_User", predicate: predicate)
         var objects = query.findObjects()
         
-        for object in objects {
-            self.resultsUsernameArray.append(object.username)
-            self.resultsProfileNameArray.append(object["profileName"] as String)
-            self.resultsImageFiles.append(object["photo"] as PFFile)
+        for object in objects! {
+            self.resultsUsernameArray.append(object.username!!)
+            self.resultsProfileNameArray.append(object["profileName"] as! String)
+            self.resultsImageFiles.append(object["photo"] as! PFFile)
             
             self.resultsTable.reloadData()
         }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var cell = tableView.cellForRowAtIndexPath(indexPath) as resultsCell
-        
+        var cell = tableView.cellForRowAtIndexPath(indexPath) as! resultsCell
         otherName = cell.usernameLbl.text!
         otherProfileName = cell.profileNameLbl.text!
         otherImg = cell.profileImg.image
@@ -72,15 +71,15 @@ class usersVC: UIViewController, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:resultsCell = tableView.dequeueReusableCellWithIdentifier("Cell") as resultsCell
+        var cell:resultsCell = tableView.dequeueReusableCellWithIdentifier("Cell") as! resultsCell
         
         cell.usernameLbl.text = self.resultsUsernameArray[indexPath.row]
         cell.profileNameLbl.text = self.resultsProfileNameArray[indexPath.row]
         resultsImageFiles[indexPath.row].getDataInBackgroundWithBlock {
-            (imageData:NSData!, error:NSError!) -> Void in
+            (imageData:NSData?, error:NSError?) -> Void in
             
             if error == nil {
-                let image = UIImage(data: imageData)
+                let image = UIImage(data: imageData!)
                 cell.profileImg.image = image
             }
         }

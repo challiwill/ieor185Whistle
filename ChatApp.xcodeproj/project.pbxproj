@@ -11,8 +11,6 @@
 		9D151DD61AD72A5D001EF774 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D151DD51AD72A5D001EF774 /* FBSDKLoginKit.framework */; };
 		9D1777681ACDFDE400023F2E /* Rick+and+morty+for+a+hundred+years+rick+and+morty+_406a982d46ccc523799e6aef45080387.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D1777671ACDFDE400023F2E /* Rick+and+morty+for+a+hundred+years+rick+and+morty+_406a982d46ccc523799e6aef45080387.png */; };
 		9D23FC461AD5E846004C085D /* conversationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D23FC451AD5E846004C085D /* conversationVC.swift */; };
-		9D244AC71ACD199D001100B7 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D244AC51ACD199D001100B7 /* Bolts.framework */; };
-		9D244AC81ACD199D001100B7 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D244AC61ACD199D001100B7 /* Parse.framework */; };
 		9D244ACA1ACD1AEA001100B7 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D244AC91ACD1AEA001100B7 /* CFNetwork.framework */; };
 		9D244ACC1ACD1AF2001100B7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D244ACB1ACD1AF2001100B7 /* CoreGraphics.framework */; };
 		9D244ACE1ACD1AF7001100B7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D244ACD1ACD1AF7001100B7 /* CoreLocation.framework */; };
@@ -25,6 +23,8 @@
 		9D244ADC1ACD1B42001100B7 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D244ADB1ACD1B42001100B7 /* libz.dylib */; };
 		9D244ADE1ACD1B4D001100B7 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D244ADD1ACD1B4D001100B7 /* libsqlite3.dylib */; };
 		9D244AE21ACD1B8F001100B7 /* ChatAppHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D244AE11ACD1B8F001100B7 /* ChatAppHeader.m */; };
+		9D7F034C1ADEE66000B30AFF /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D7F034A1ADEE66000B30AFF /* Bolts.framework */; };
+		9D7F034D1ADEE66000B30AFF /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D7F034B1ADEE66000B30AFF /* Parse.framework */; };
 		9D8FDE841ADC4F0B00D3BC7F /* tripCompletedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8FDE831ADC4F0B00D3BC7F /* tripCompletedVC.swift */; };
 		9D8FDE861ADC51BA00D3BC7F /* tripPlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8FDE851ADC51BA00D3BC7F /* tripPlanVC.swift */; };
 		9DE2A9C41AD5B49000A24D7E /* usersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE2A9C31AD5B49000A24D7E /* usersVC.swift */; };
@@ -53,8 +53,6 @@
 		9D151DD51AD72A5D001EF774 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		9D1777671ACDFDE400023F2E /* Rick+and+morty+for+a+hundred+years+rick+and+morty+_406a982d46ccc523799e6aef45080387.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rick+and+morty+for+a+hundred+years+rick+and+morty+_406a982d46ccc523799e6aef45080387.png"; sourceTree = "<group>"; };
 		9D23FC451AD5E846004C085D /* conversationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = conversationVC.swift; sourceTree = "<group>"; };
-		9D244AC51ACD199D001100B7 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		9D244AC61ACD199D001100B7 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		9D244AC91ACD1AEA001100B7 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		9D244ACB1ACD1AF2001100B7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		9D244ACD1ACD1AF7001100B7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -68,6 +66,8 @@
 		9D244ADD1ACD1B4D001100B7 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		9D244AE01ACD1B8F001100B7 /* ChatApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChatApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		9D244AE11ACD1B8F001100B7 /* ChatAppHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatAppHeader.m; sourceTree = "<group>"; };
+		9D7F034A1ADEE66000B30AFF /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		9D7F034B1ADEE66000B30AFF /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		9D8FDE831ADC4F0B00D3BC7F /* tripCompletedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tripCompletedVC.swift; sourceTree = "<group>"; };
 		9D8FDE851ADC51BA00D3BC7F /* tripPlanVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tripPlanVC.swift; sourceTree = "<group>"; };
 		9DE2A9C31AD5B49000A24D7E /* usersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = usersVC.swift; sourceTree = "<group>"; };
@@ -94,6 +94,7 @@
 				9D244ADC1ACD1B42001100B7 /* libz.dylib in Frameworks */,
 				9D151DD61AD72A5D001EF774 /* FBSDKLoginKit.framework in Frameworks */,
 				9D244ADA1ACD1B29001100B7 /* SystemConfiguration.framework in Frameworks */,
+				9D7F034D1ADEE66000B30AFF /* Parse.framework in Frameworks */,
 				9D244AD81ACD1B21001100B7 /* StoreKit.framework in Frameworks */,
 				9D244AD61ACD1B19001100B7 /* Security.framework in Frameworks */,
 				9D244AD41ACD1B12001100B7 /* QuartzCore.framework in Frameworks */,
@@ -103,8 +104,7 @@
 				9D244ACC1ACD1AF2001100B7 /* CoreGraphics.framework in Frameworks */,
 				9D244ACA1ACD1AEA001100B7 /* CFNetwork.framework in Frameworks */,
 				9D151DD41AD72587001EF774 /* FBSDKCoreKit.framework in Frameworks */,
-				9D244AC81ACD199D001100B7 /* Parse.framework in Frameworks */,
-				9D244AC71ACD199D001100B7 /* Bolts.framework in Frameworks */,
+				9D7F034C1ADEE66000B30AFF /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +121,8 @@
 		9D244ADF1ACD1B65001100B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9D7F034A1ADEE66000B30AFF /* Bolts.framework */,
+				9D7F034B1ADEE66000B30AFF /* Parse.framework */,
 				9D151DD51AD72A5D001EF774 /* FBSDKLoginKit.framework */,
 				9D151DD31AD72587001EF774 /* FBSDKCoreKit.framework */,
 				9D244ADD1ACD1B4D001100B7 /* libsqlite3.dylib */,
@@ -134,8 +136,6 @@
 				9D244ACD1ACD1AF7001100B7 /* CoreLocation.framework */,
 				9D244ACB1ACD1AF2001100B7 /* CoreGraphics.framework */,
 				9D244AC91ACD1AEA001100B7 /* CFNetwork.framework */,
-				9D244AC51ACD199D001100B7 /* Bolts.framework */,
-				9D244AC61ACD199D001100B7 /* Parse.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
