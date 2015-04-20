@@ -117,6 +117,7 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
             (succeeded:Bool, signUpError:NSError?) -> Void in
             if signUpError == nil {
                 println("signup")
+                tripPlanSource = 1
                 self.performSegueWithIdentifier("goToTripPlanVC2", sender: self)
             } else {
                 println("can't signup")

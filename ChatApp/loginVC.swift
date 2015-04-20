@@ -53,6 +53,7 @@ class loginVC: UIViewController {
             
             if logInError == nil {
                 println("log in")
+                tripPlanSource = 1
                 self.performSegueWithIdentifier("goToTripPlanVC", sender: self)
             } else {
                 println("error log in")
