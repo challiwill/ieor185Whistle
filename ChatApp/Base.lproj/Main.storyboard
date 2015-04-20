@@ -58,6 +58,7 @@
                     <navigationItem key="navigationItem" id="VDE-5D-T2G"/>
                     <connections>
                         <outlet property="loginBtn" destination="jHj-Yf-Pk0" id="tXN-0x-1m4"/>
+                        <outlet property="loginVC" destination="kh9-bI-dsS" id="m8w-Bk-gcQ"/>
                         <outlet property="passwordTxt" destination="ybx-jr-u59" id="Tp6-3e-Are"/>
                         <outlet property="signupBtn" destination="lxX-dA-E2g" id="afQ-v5-hXM"/>
                         <outlet property="usernameTxt" destination="9F8-wf-PyZ" id="SLT-mn-zKX"/>
@@ -254,7 +255,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="120" id="0vK-lY-Iw4" customClass="resultsCell" customModule="ChatApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="120"/>
+                                        <rect key="frame" x="0.0" y="86" width="320" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0vK-lY-Iw4" id="XTr-sT-Kqz">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="119"/>
@@ -470,6 +471,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="3xX-zo-jtg"/>
+        <segue reference="dZ0-ZM-ifL"/>
     </inferredMetricsTieBreakers>
 </document>

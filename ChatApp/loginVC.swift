@@ -16,6 +16,7 @@ class loginVC: UIViewController {
     @IBOutlet weak var passwordTxt: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var signupBtn: UIButton!
+    @IBOutlet var loginVC: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +37,16 @@ class loginVC: UIViewController {
         // TODO add delegate methods
         // http://www.brianjcoleman.com/tutorial-how-to-use-login-in-facebook-sdk-4-0-for-swift/
         // fbLogin.delegate = self
+        
+        let tapScrollViewGesture = UITapGestureRecognizer(target: self, action: "didTapScrollView")
+        tapScrollViewGesture.numberOfTapsRequired = 1
+        loginVC.addGestureRecognizer(tapScrollViewGesture)
     }
 
+    func didTapScrollView() {
+        self.view.endEditing(true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
