@@ -23,7 +23,7 @@
 		9D244ADC1ACD1B42001100B7 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D244ADB1ACD1B42001100B7 /* libz.dylib */; };
 		9D244ADE1ACD1B4D001100B7 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D244ADD1ACD1B4D001100B7 /* libsqlite3.dylib */; };
 		9D244AE21ACD1B8F001100B7 /* ChatAppHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D244AE11ACD1B8F001100B7 /* ChatAppHeader.m */; };
-		9D5F1CDC1AE58C880062F45B /* no-photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D5F1CDB1AE58C880062F45B /* no-photo.png */; };
+		9D6F696C1AE5D47900C4955D /* no-photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D6F696B1AE5D47900C4955D /* no-photo.png */; };
 		9D7F034C1ADEE66000B30AFF /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D7F034A1ADEE66000B30AFF /* Bolts.framework */; };
 		9D7F034D1ADEE66000B30AFF /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D7F034B1ADEE66000B30AFF /* Parse.framework */; };
 		9D8FDE841ADC4F0B00D3BC7F /* tripCompletedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8FDE831ADC4F0B00D3BC7F /* tripCompletedVC.swift */; };
@@ -67,7 +67,7 @@
 		9D244ADD1ACD1B4D001100B7 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		9D244AE01ACD1B8F001100B7 /* ChatApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChatApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		9D244AE11ACD1B8F001100B7 /* ChatAppHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatAppHeader.m; sourceTree = "<group>"; };
-		9D5F1CDB1AE58C880062F45B /* no-photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-photo.png"; sourceTree = "<group>"; };
+		9D6F696B1AE5D47900C4955D /* no-photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-photo.png"; sourceTree = "<group>"; };
 		9D7F034A1ADEE66000B30AFF /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		9D7F034B1ADEE66000B30AFF /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		9D8FDE831ADC4F0B00D3BC7F /* tripCompletedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tripCompletedVC.swift; sourceTree = "<group>"; };
@@ -185,7 +185,7 @@
 		9DF3DD7B1ACA14EF004D150C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9D5F1CDB1AE58C880062F45B /* no-photo.png */,
+				9D6F696B1AE5D47900C4955D /* no-photo.png */,
 				9D1777671ACDFDE400023F2E /* Rick+and+morty+for+a+hundred+years+rick+and+morty+_406a982d46ccc523799e6aef45080387.png */,
 				9DF3DD7C1ACA14EF004D150C /* Info.plist */,
 			);
@@ -292,8 +292,8 @@
 			files = (
 				9DF3DD831ACA14EF004D150C /* Main.storyboard in Resources */,
 				9D1777681ACDFDE400023F2E /* Rick+and+morty+for+a+hundred+years+rick+and+morty+_406a982d46ccc523799e6aef45080387.png in Resources */,
+				9D6F696C1AE5D47900C4955D /* no-photo.png in Resources */,
 				9DF3DD881ACA14EF004D150C /* LaunchScreen.xib in Resources */,
-				9D5F1CDC1AE58C880062F45B /* no-photo.png in Resources */,
 				9DF3DD851ACA14EF004D150C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

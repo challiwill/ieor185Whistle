@@ -19,7 +19,7 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let theWidth = view.frame.size.width
         let theHeight = view.frame.size.height
         
@@ -34,6 +34,12 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
         signupBtn.center = CGPointMake(theWidth/2, 380)
     }
 
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.navigationBar.barTintColor  = UIColor(red: 0.337, green: 0.471, blue: 0.518, alpha: 1)
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 0.988, green: 0.808, blue: 0.502, alpha: 1.0)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

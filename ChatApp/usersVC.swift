@@ -59,7 +59,7 @@ class usersVC: UIViewController, UITableViewDataSource {
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.navigationItem.hidesBackButton = true
+        self.navigationItem.hidesBackButton = false
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -10,10 +10,15 @@ import UIKit
 
 var tripPlanSource:Int = 0
 
-class tripPlanVC: UIViewController {
+class tripPlanVC: UIViewController, UITextFieldDelegate {
+    
 
+    @IBOutlet var frameView: UIView!
+    var scrollViewOriginalY:CGFloat = 0.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.title = "Plan Trip"
         // TODO relative placement of objects
         let theWidth = view.frame.size.width
@@ -31,15 +36,51 @@ class tripPlanVC: UIViewController {
             endLbl.frame.size.width = theWidth-10
             view.addSubview(endLbl)
         }
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWasShown:", name: UIKeyboardDidShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
     }
 
+    func keyboardWasShown(notification:NSNotification) {
+        if (UIScreen.mainScreen().bounds.height == 568) {
+            let dict:NSDictionary = notification.userInfo!
+            let s:NSValue = dict.valueForKey(UIKeyboardFrameEndUserInfoKey) as! NSValue
+            let rect:CGRect = s.CGRectValue()
+            
+            UIView.animateWithDuration(0.3, delay: 0, options: .CurveLinear, animations: {
+                self.frameView.frame.origin.y = self.scrollViewOriginalY - rect.height/3
+                }, completion: {
+                    (finished:Bool) in
+            })
+        }
+    }
+
+    func keyboardWillHide(notification:NSNotification) {
+        let dict:NSDictionary = notification.userInfo!
+        let s:NSValue = dict.valueForKey(UIKeyboardFrameEndUserInfoKey) as! NSValue
+        let rect:CGRect = s.CGRectValue()
+        
+        UIView.animateWithDuration(0.3, delay: 0, options: .CurveLinear, animations: {
+            self.frameView.frame.origin.y = self.scrollViewOriginalY
+            }, completion: {
+                (finished:Bool) in
+        })
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     override func viewWillAppear(animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         self.navigationItem.hidesBackButton = true
+        self.navigationController?.navigationBar.barTintColor  = UIColor(red: 0.337, green: 0.471, blue: 0.518, alpha: 1.0)
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 0.988, green: 0.808, blue: 0.502, alpha: 1.0)
+    }
+    
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        self.view.endEditing(true)
     }
 
     @IBAction func goBtn_click(sender: AnyObject) {

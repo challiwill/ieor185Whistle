@@ -31,9 +31,9 @@ class loginVC: UIViewController {
         signupBtn.center = CGPointMake(theWidth/2, theHeight-30)
         
         //TODO add check to see if already logged in
-        var fbLogin:FBSDKLoginButton = FBSDKLoginButton()
-        fbLogin.center = CGPointMake(theWidth/2, theHeight-100)
-        self.view.addSubview(fbLogin)
+        //        var fbLogin:FBSDKLoginButton = FBSDKLoginButton()
+        //        fbLogin.center = CGPointMake(theWidth/2, theHeight-100)
+        //        self.view.addSubview(fbLogin)
         // TODO add delegate methods
         // http://www.brianjcoleman.com/tutorial-how-to-use-login-in-facebook-sdk-4-0-for-swift/
         // fbLogin.delegate = self
@@ -53,7 +53,8 @@ class loginVC: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.navigationItem.hidesBackButton = true
+//        self.navigationItem.hidesBackButton = true
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
     @IBAction func loginBtn_click(sender: AnyObject) {
