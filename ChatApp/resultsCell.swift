@@ -13,6 +13,9 @@ class resultsCell: UITableViewCell {
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var profileNameLbl: UILabel!
     @IBOutlet weak var usernameLbl: UILabel!
+    @IBOutlet weak var companyLbl: UILabel!
+    @IBOutlet weak var leavingInLbl: UILabel!
+    @IBOutlet weak var ratingImg: UIImageView!
     
     
     override func awakeFromNib() {
@@ -25,7 +28,10 @@ class resultsCell: UITableViewCell {
         profileImg.center = CGPointMake(60, 60)
         profileImg.layer.cornerRadius = profileImg.frame.size.width/2
         profileImg.clipsToBounds = true
-        profileNameLbl.center = CGPointMake(230, 55)
+        profileNameLbl.center = CGPointMake(230, 25)
+        companyLbl.center = CGPointMake(230, 45)
+        leavingInLbl.center = CGPointMake(235, 65)
+        ratingImg.center = CGPointMake(200, 87)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

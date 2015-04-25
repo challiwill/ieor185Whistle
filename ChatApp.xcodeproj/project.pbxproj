@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D014BAE1AEA28D500F02FED /* 3star.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9D014BA91AEA28D500F02FED /* 3star.gif */; };
+		9D014BAF1AEA28D500F02FED /* 4star.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9D014BAA1AEA28D500F02FED /* 4star.gif */; };
+		9D014BB01AEA28D500F02FED /* 1star.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9D014BAB1AEA28D500F02FED /* 1star.gif */; };
+		9D014BB11AEA28D500F02FED /* 2star.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9D014BAC1AEA28D500F02FED /* 2star.gif */; };
+		9D014BB21AEA28D500F02FED /* 5star.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9D014BAD1AEA28D500F02FED /* 5star.gif */; };
 		9D151DD41AD72587001EF774 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D151DD31AD72587001EF774 /* FBSDKCoreKit.framework */; };
 		9D151DD61AD72A5D001EF774 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D151DD51AD72A5D001EF774 /* FBSDKLoginKit.framework */; };
 		9D1777681ACDFDE400023F2E /* Rick+and+morty+for+a+hundred+years+rick+and+morty+_406a982d46ccc523799e6aef45080387.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D1777671ACDFDE400023F2E /* Rick+and+morty+for+a+hundred+years+rick+and+morty+_406a982d46ccc523799e6aef45080387.png */; };
@@ -50,6 +55,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9D014BA91AEA28D500F02FED /* 3star.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 3star.gif; sourceTree = "<group>"; };
+		9D014BAA1AEA28D500F02FED /* 4star.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 4star.gif; sourceTree = "<group>"; };
+		9D014BAB1AEA28D500F02FED /* 1star.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 1star.gif; sourceTree = "<group>"; };
+		9D014BAC1AEA28D500F02FED /* 2star.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 2star.gif; sourceTree = "<group>"; };
+		9D014BAD1AEA28D500F02FED /* 5star.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 5star.gif; sourceTree = "<group>"; };
 		9D151DD31AD72587001EF774 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		9D151DD51AD72A5D001EF774 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		9D1777671ACDFDE400023F2E /* Rick+and+morty+for+a+hundred+years+rick+and+morty+_406a982d46ccc523799e6aef45080387.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rick+and+morty+for+a+hundred+years+rick+and+morty+_406a982d46ccc523799e6aef45080387.png"; sourceTree = "<group>"; };
@@ -185,6 +195,11 @@
 		9DF3DD7B1ACA14EF004D150C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9D014BA91AEA28D500F02FED /* 3star.gif */,
+				9D014BAA1AEA28D500F02FED /* 4star.gif */,
+				9D014BAB1AEA28D500F02FED /* 1star.gif */,
+				9D014BAC1AEA28D500F02FED /* 2star.gif */,
+				9D014BAD1AEA28D500F02FED /* 5star.gif */,
 				9D6F696B1AE5D47900C4955D /* no-photo.png */,
 				9D1777671ACDFDE400023F2E /* Rick+and+morty+for+a+hundred+years+rick+and+morty+_406a982d46ccc523799e6aef45080387.png */,
 				9DF3DD7C1ACA14EF004D150C /* Info.plist */,
@@ -290,11 +305,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D014BB01AEA28D500F02FED /* 1star.gif in Resources */,
+				9D014BAF1AEA28D500F02FED /* 4star.gif in Resources */,
+				9D014BAE1AEA28D500F02FED /* 3star.gif in Resources */,
 				9DF3DD831ACA14EF004D150C /* Main.storyboard in Resources */,
 				9D1777681ACDFDE400023F2E /* Rick+and+morty+for+a+hundred+years+rick+and+morty+_406a982d46ccc523799e6aef45080387.png in Resources */,
 				9D6F696C1AE5D47900C4955D /* no-photo.png in Resources */,
 				9DF3DD881ACA14EF004D150C /* LaunchScreen.xib in Resources */,
 				9DF3DD851ACA14EF004D150C /* Images.xcassets in Resources */,
+				9D014BB21AEA28D500F02FED /* 5star.gif in Resources */,
+				9D014BB11AEA28D500F02FED /* 2star.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

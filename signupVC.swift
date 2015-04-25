@@ -15,6 +15,7 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
     @IBOutlet weak var usernameTxt: UITextField!
     @IBOutlet weak var passwordTxt: UITextField!
     @IBOutlet weak var profileNameTxt: UITextField!
+    @IBOutlet weak var companyNameTxt: UITextField!
     @IBOutlet weak var signupBtn: UIButton!
 
     override func viewDidLoad() {
@@ -31,7 +32,8 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
         usernameTxt.frame = CGRectMake(16, 230, theWidth-32, 30)
         passwordTxt.frame = CGRectMake(16, 270, theWidth-32, 30)
         profileNameTxt.frame = CGRectMake(16, 310, theWidth-32, 30)
-        signupBtn.center = CGPointMake(theWidth/2, 380)
+        companyNameTxt.frame = CGRectMake(16, 350, theWidth-32, 30)
+        signupBtn.center = CGPointMake(theWidth/2, 420)
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -81,7 +83,7 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
         let theHeight = view.frame.size.height
         
         if (UIScreen.mainScreen().bounds.height == 568) {
-            if (textField == self.profileNameTxt) {
+            if (textField == self.profileNameTxt || textField == self.companyNameTxt) {
                 UIView.animateWithDuration(0.3, delay: 0, options:.CurveLinear, animations: {
                     self.view.center = CGPointMake(theWidth/2, (theHeight/2)-40)
                     }, completion: {
@@ -109,11 +111,14 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
     }
     
     @IBAction func signupBtn_click(sender: AnyObject) {
+        // TODO validate email here!
         var user = PFUser()
         user.username = usernameTxt.text
         user.password = passwordTxt.text
         user.email = usernameTxt.text
         user["profileName"] = profileNameTxt.text
+        user["company"] = companyNameTxt.text
+        user["rating"] = 0
         
         let imageData = UIImagePNGRepresentation(self.profileImg.image)
         let imageFile = PFFile(name:"profilePhoto.png", data: imageData)

@@ -101,7 +101,7 @@
                                     <action selector="addImgBtn_click:" destination="mGK-UK-2f5" eventType="touchUpInside" id="XpC-am-j33"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" minimumFontSize="17" id="DWY-6U-PC9">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email (must be company email)" minimumFontSize="17" id="DWY-6U-PC9">
                                 <rect key="frame" x="27" y="257" width="272" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.41960784309999999" green="0.61176470589999998" blue="0.67843137249999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -151,6 +151,17 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.0"/>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="company name" minimumFontSize="17" id="HxD-e2-Gwg">
+                                <rect key="frame" x="27" y="409" width="272" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.41960784309999999" green="0.61176470589999998" blue="0.67843137249999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.1058823529" green="0.25490196079999999" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="mGK-UK-2f5" id="geS-HV-PGp"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.33725490200000002" green="0.47058823529999999" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.98823529409999999" green="0.80784313730000001" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -158,6 +169,7 @@
                     <navigationItem key="navigationItem" title="SignUp" id="gj4-dj-YNH"/>
                     <connections>
                         <outlet property="addImgBtn" destination="ecM-9k-rn4" id="0av-8U-WW5"/>
+                        <outlet property="companyNameTxt" destination="HxD-e2-Gwg" id="Z2D-Vj-yIQ"/>
                         <outlet property="passwordTxt" destination="mEj-sb-Rkg" id="cRu-El-seq"/>
                         <outlet property="profileImg" destination="QFI-gi-7ZI" id="0A5-9d-coe"/>
                         <outlet property="profileNameTxt" destination="yNV-5i-Qwm" id="9wv-Ot-KwH"/>
@@ -314,9 +326,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profilename" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="R93-PO-emj">
-                                                    <rect key="frame" x="123" y="44" width="190" height="21"/>
+                                                    <rect key="frame" x="122" y="14" width="190" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" red="0.9882352941176471" green="0.80784313725490198" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="highlightedColor" red="0.1058823529" green="0.25490196079999999" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </label>
@@ -331,12 +343,33 @@
                                                     <rect key="frame" x="-1" y="-1" width="110" height="110"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IES-h8-FNg">
+                                                    <rect key="frame" x="122" y="35" width="190" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.98823529409999999" green="0.80784313730000001" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LeavingIn" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mEW-8G-GBx">
+                                                    <rect key="frame" x="132" y="56" width="180" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="0.79607843140000001" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="5star.gif" id="bJq-ZT-3bI">
+                                                    <rect key="frame" x="132" y="78" width="132" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.41960784313725491" green="0.61176470588235299" blue="0.67843137254901964" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
+                                            <outlet property="companyLbl" destination="IES-h8-FNg" id="kWt-Hy-gOg"/>
+                                            <outlet property="leavingInLbl" destination="mEW-8G-GBx" id="5oP-D4-JUK"/>
                                             <outlet property="profileImg" destination="qe7-SA-Aen" id="UUA-Pg-A2D"/>
                                             <outlet property="profileNameLbl" destination="R93-PO-emj" id="LlR-PG-f2j"/>
+                                            <outlet property="ratingImg" destination="bJq-ZT-3bI" id="IyE-9D-mxv"/>
                                             <outlet property="usernameLbl" destination="5N9-G2-ffD" id="DUO-5b-xN9"/>
                                         </connections>
                                     </tableViewCell>
@@ -515,6 +548,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="5star.gif" width="132" height="21"/>
         <image name="no-photo.png" width="500" height="500"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -523,6 +557,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="3xX-zo-jtg"/>
+        <segue reference="fuk-xE-W1j"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -16,6 +16,9 @@ class usersVC: UIViewController, UITableViewDataSource {
     var resultsUsernameArray = [String]()
     var resultsProfileNameArray = [String]()
     var resultsImageFiles = [PFFile]()
+    var resultsCompanyNameArray = [String]()
+    var resultsLeavingInArray = [Int]()
+    var resultsFeedbackArray = [Float]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +39,9 @@ class usersVC: UIViewController, UITableViewDataSource {
         self.resultsUsernameArray.removeAll(keepCapacity: false)
         self.resultsProfileNameArray.removeAll(keepCapacity: false)
         self.resultsImageFiles.removeAll(keepCapacity: false)
+        self.resultsCompanyNameArray.removeAll(keepCapacity: false)
+        self.resultsLeavingInArray.removeAll(keepCapacity: false)
+        self.resultsFeedbackArray.removeAll(keepCapacity: false)
         
         let predicate = NSPredicate(format: "username != '"+userName+"'")
         var query = PFQuery(className: "_User", predicate: predicate)
@@ -45,6 +51,9 @@ class usersVC: UIViewController, UITableViewDataSource {
             self.resultsUsernameArray.append(object.username!!)
             self.resultsProfileNameArray.append(object["profileName"] as! String)
             self.resultsImageFiles.append(object["photo"] as! PFFile)
+            self.resultsCompanyNameArray.append(object["company"] as! String)
+            // TODO need to deal with leavingBegina and leavingEnd
+            self.resultsFeedbackArray.append(object["rating"] as! Float)
             
             self.resultsTable.reloadData()
         }
@@ -55,6 +64,7 @@ class usersVC: UIViewController, UITableViewDataSource {
         otherName = cell.usernameLbl.text!
         otherProfileName = cell.profileNameLbl.text!
         otherImg = cell.profileImg.image
+        
         self.performSegueWithIdentifier("goToConversationVC", sender: self)
     }
     
@@ -75,6 +85,24 @@ class usersVC: UIViewController, UITableViewDataSource {
         
         cell.usernameLbl.text = self.resultsUsernameArray[indexPath.row]
         cell.profileNameLbl.text = self.resultsProfileNameArray[indexPath.row]
+        cell.companyLbl.text = self.resultsCompanyNameArray[indexPath.row]
+        // TODO updated leaving in time
+        switch resultsFeedbackArray[indexPath.row] {
+        case 1:
+            cell.ratingImg.image = UIImage(named: "1star.gif")
+        case 2:
+            cell.ratingImg.image = UIImage(named: "2star.gif")
+        case 3:
+            cell.ratingImg.image = UIImage(named: "3star.gif")
+        case 4:
+            cell.ratingImg.image = UIImage(named: "4star.gif")
+        case 5:
+            cell.ratingImg.image = UIImage(named: "5star.gif")
+        default:
+            // TODO this should not be the default
+            cell.ratingImg.image = UIImage(named: "5star.gif")
+        }
+        
         resultsImageFiles[indexPath.row].getDataInBackgroundWithBlock {
             (imageData:NSData?, error:NSError?) -> Void in
             
