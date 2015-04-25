@@ -85,7 +85,7 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
         if (UIScreen.mainScreen().bounds.height == 568) {
             if (textField == self.profileNameTxt || textField == self.companyNameTxt) {
                 UIView.animateWithDuration(0.3, delay: 0, options:.CurveLinear, animations: {
-                    self.view.center = CGPointMake(theWidth/2, (theHeight/2)-40)
+                    self.view.center = CGPointMake(theWidth/2, (theHeight/2)-90)
                     }, completion: {
                         (finished:Bool) in
                         //
