@@ -6,12 +6,16 @@
 //  Copyright (c) 2015 Black_Shark. All rights reserved.
 //
 
+// TODO somehow get rid of bottom bar that is showing up on this view
+
 import UIKit
 
 var userName = ""
+var myTrip:PFObject = PFObject(className: "dummy")
 
 class usersVC: UIViewController, UITableViewDataSource {
 
+    @IBOutlet var uiView: UIView!
     @IBOutlet weak var resultsTable: UITableView!
     var resultsUsernameArray = [String]()
     var resultsProfileNameArray = [String]()
@@ -43,19 +47,26 @@ class usersVC: UIViewController, UITableViewDataSource {
         self.resultsLeavingInArray.removeAll(keepCapacity: false)
         self.resultsFeedbackArray.removeAll(keepCapacity: false)
         
-        let predicate = NSPredicate(format: "username != '"+userName+"'")
-        var query = PFQuery(className: "_User", predicate: predicate)
-        var objects = query.findObjects()
-        
-        for object in objects! {
-            self.resultsUsernameArray.append(object.username!!)
-            self.resultsProfileNameArray.append(object["profileName"] as! String)
-            self.resultsImageFiles.append(object["photo"] as! PFFile)
-            self.resultsCompanyNameArray.append(object["company"] as! String)
-            // TODO need to deal with leavingBegina and leavingEnd
-            self.resultsFeedbackArray.append(object["rating"] as! Float)
-            
-            self.resultsTable.reloadData()
+        let tripsPredicate = NSPredicate(format: "userEmail != '"+userName+"'")
+        var tripsQuery = PFQuery(className: "Trip", predicate: tripsPredicate)
+        var trips = tripsQuery.findObjects()
+        // TODO make it not add the same person multiple times even if they have multiple trips. just use most recent trip
+        for trip in trips! {
+            if ((trip["leavingEnd"] as! NSDate).compare(myTrip["leavingEnd"] as! NSDate) == NSComparisonResult.OrderedAscending ||
+                (trip["leavingEnd"] as! NSDate).compare(myTrip["leavingEnd"] as! NSDate) == NSComparisonResult.OrderedSame) {
+                let userPredicate = NSPredicate(format: "username == '"+(trip["userEmail"] as! String)+"'")
+                var userQuery = PFQuery(className: "_User", predicate: userPredicate)
+                var users = userQuery.findObjects()
+                    for user in users! {
+                        self.resultsUsernameArray.append(user.username!!)
+                        self.resultsProfileNameArray.append(user["profileName"] as! String)
+                        self.resultsImageFiles.append(user["photo"] as! PFFile)
+                        self.resultsCompanyNameArray.append(user["company"] as! String)
+                        self.resultsFeedbackArray.append(user["rating"] as! Float)
+                        
+                        self.resultsTable.reloadData()
+                    }
+            }
         }
     }
     

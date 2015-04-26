@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import Foundation
 
 var tripPlanSource:Int = 0
 
 class tripPlanVC: UIViewController, UITextFieldDelegate {
-    
 
+    @IBOutlet weak var leavingEndTxt: UITextField!
     @IBOutlet var frameView: UIView!
     var scrollViewOriginalY:CGFloat = 0.0
     
@@ -86,7 +87,27 @@ class tripPlanVC: UIViewController, UITextFieldDelegate {
     @IBAction func goBtn_click(sender: AnyObject) {
         //        TODO Do some sort of validity check
         //        TODO make sure to sort users
-        self.performSegueWithIdentifier("goToUsersVC", sender: self)
+        // TODO do validity test on numbers/dates and accept multiple input styles
+        let trip = PFObject(className: "Trip")
+        let user = PFUser.currentUser()
+        let begin = NSDate(timeIntervalSinceNow: 0)
+        // TODO make buttons choose time (15,20,30 min)
+        let end = NSDate(timeIntervalSinceNow: 15)
+        trip["userEmail"] = user!.email
+        trip["leavingBegin"] = begin
+        trip["leavingEnd"] = end
+        trip.saveInBackgroundWithBlock {
+            (success: Bool, error:NSError?) -> Void in
+            
+            if success == true {
+                println("trip saved")
+                myTrip = trip
+                self.performSegueWithIdentifier("goToUsersVC", sender: self)
+            } else {
+                // TODO make error message that user sees
+            }
+        }
+
     }
     
     @IBAction func logoutBtn_click(sender: AnyObject) {
