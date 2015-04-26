@@ -58,13 +58,15 @@ class usersVC: UIViewController, UITableViewDataSource {
                 var userQuery = PFQuery(className: "_User", predicate: userPredicate)
                 var users = userQuery.findObjects()
                     for user in users! {
-                        self.resultsUsernameArray.append(user.username!!)
-                        self.resultsProfileNameArray.append(user["profileName"] as! String)
-                        self.resultsImageFiles.append(user["photo"] as! PFFile)
-                        self.resultsCompanyNameArray.append(user["company"] as! String)
-                        self.resultsFeedbackArray.append(user["rating"] as! Float)
-                        
-                        self.resultsTable.reloadData()
+                        if (!contains(resultsUsernameArray, user.username!!)) {
+                            self.resultsUsernameArray.append(user.username!!)
+                            self.resultsProfileNameArray.append(user["profileName"] as! String)
+                            self.resultsImageFiles.append(user["photo"] as! PFFile)
+                            self.resultsCompanyNameArray.append(user["company"] as! String)
+                            self.resultsFeedbackArray.append(user["rating"] as! Float)
+                            
+                            self.resultsTable.reloadData()
+                        }
                     }
             }
         }
