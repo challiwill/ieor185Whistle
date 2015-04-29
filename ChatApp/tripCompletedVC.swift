@@ -37,9 +37,4 @@ class tripCompletedVC: UIViewController {
         self.navigationItem.hidesBackButton = true
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == "endTrip") {
-            tripPlanSource = 2
-        }
-    }
 }

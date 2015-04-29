@@ -12,6 +12,7 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
     
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var addImgBtn: UIButton!
+    @IBOutlet weak var underlineLbl: UILabel!
     @IBOutlet weak var usernameTxt: UITextField!
     @IBOutlet weak var passwordTxt: UITextField!
     @IBOutlet weak var profileNameTxt: UITextField!
@@ -28,18 +29,22 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
         profileImg.layer.cornerRadius = profileImg.frame.size.width/2
         profileImg.clipsToBounds = true
         
-        addImgBtn.center = CGPointMake(self.profileImg.frame.maxX+50, 140)
-        usernameTxt.frame = CGRectMake(16, 230, theWidth-32, 30)
-        passwordTxt.frame = CGRectMake(16, 270, theWidth-32, 30)
-        profileNameTxt.frame = CGRectMake(16, 310, theWidth-32, 30)
-        companyNameTxt.frame = CGRectMake(16, 350, theWidth-32, 30)
-        signupBtn.center = CGPointMake(theWidth/2, 420)
+        addImgBtn.center = CGPointMake(theWidth/2, self.profileImg.frame.maxY+20)
+        underlineLbl.center = CGPointMake(theWidth/2, self.addImgBtn.frame.maxY-5)
+        usernameTxt.frame = CGRectMake(16, 240, theWidth-32, 30)
+        passwordTxt.frame = CGRectMake(16, 273, theWidth-32, 30)
+        profileNameTxt.frame = CGRectMake(16, 306, theWidth-32, 30)
+        companyNameTxt.frame = CGRectMake(16, 339, theWidth-32, 30)
+        signupBtn.center = CGPointMake(theWidth/2, 400)
     }
 
     override func viewWillAppear(animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
-        self.navigationController?.navigationBar.barTintColor  = UIColor(red: 0.337, green: 0.471, blue: 0.518, alpha: 1)
-        self.navigationController?.navigationBar.tintColor = UIColor(red: 0.988, green: 0.808, blue: 0.502, alpha: 1.0)
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        self.navigationController?.navigationBar.barTintColor  = UIColor(red: 0.141, green: 0.153, blue: 0.212, alpha: 1)
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 0.808, green: 0.824, blue: 0.831, alpha: 1.0)
+        let logo = UIImage(named: "logo_small.png")
+        let imageView = UIImageView(image: logo)
+        self.navigationItem.titleView = imageView
     }
     
     override func didReceiveMemoryWarning() {
@@ -128,7 +133,6 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
             (succeeded:Bool, signUpError:NSError?) -> Void in
             if signUpError == nil {
                 println("signup")
-                tripPlanSource = 1
                 self.performSegueWithIdentifier("goToTripPlanVC2", sender: self)
             } else {
                 println("can't signup")

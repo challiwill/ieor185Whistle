@@ -14,7 +14,6 @@
 		9D014BB21AEA28D500F02FED /* 5star.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9D014BAD1AEA28D500F02FED /* 5star.gif */; };
 		9D151DD41AD72587001EF774 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D151DD31AD72587001EF774 /* FBSDKCoreKit.framework */; };
 		9D151DD61AD72A5D001EF774 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D151DD51AD72A5D001EF774 /* FBSDKLoginKit.framework */; };
-		9D1777681ACDFDE400023F2E /* Rick+and+morty+for+a+hundred+years+rick+and+morty+_406a982d46ccc523799e6aef45080387.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D1777671ACDFDE400023F2E /* Rick+and+morty+for+a+hundred+years+rick+and+morty+_406a982d46ccc523799e6aef45080387.png */; };
 		9D23FC461AD5E846004C085D /* conversationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D23FC451AD5E846004C085D /* conversationVC.swift */; };
 		9D244ACA1ACD1AEA001100B7 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D244AC91ACD1AEA001100B7 /* CFNetwork.framework */; };
 		9D244ACC1ACD1AF2001100B7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D244ACB1ACD1AF2001100B7 /* CoreGraphics.framework */; };
@@ -28,13 +27,20 @@
 		9D244ADC1ACD1B42001100B7 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D244ADB1ACD1B42001100B7 /* libz.dylib */; };
 		9D244ADE1ACD1B4D001100B7 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D244ADD1ACD1B4D001100B7 /* libsqlite3.dylib */; };
 		9D244AE21ACD1B8F001100B7 /* ChatAppHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D244AE11ACD1B8F001100B7 /* ChatAppHeader.m */; };
-		9D6F696C1AE5D47900C4955D /* no-photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D6F696B1AE5D47900C4955D /* no-photo.png */; };
+		9D3098CC1AF1511200A88E89 /* logo_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D3098CB1AF1511200A88E89 /* logo_small.png */; };
+		9D3098CE1AF1540200A88E89 /* logo_loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D3098CD1AF1540200A88E89 /* logo_loading.png */; };
+		9D3098D21AF15C9400A88E89 /* time_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D3098D11AF15C9400A88E89 /* time_btn.png */; };
+		9D3098D41AF15EDC00A88E89 /* logo_small_light.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D3098D31AF15EDC00A88E89 /* logo_small_light.png */; };
+		9D3098D61AF1702300A88E89 /* time_btn_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D3098D51AF1702300A88E89 /* time_btn_selected.png */; };
 		9D7F034C1ADEE66000B30AFF /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D7F034A1ADEE66000B30AFF /* Bolts.framework */; };
 		9D7F034D1ADEE66000B30AFF /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D7F034B1ADEE66000B30AFF /* Parse.framework */; };
 		9D8FDE841ADC4F0B00D3BC7F /* tripCompletedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8FDE831ADC4F0B00D3BC7F /* tripCompletedVC.swift */; };
 		9D8FDE861ADC51BA00D3BC7F /* tripPlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8FDE851ADC51BA00D3BC7F /* tripPlanVC.swift */; };
 		9DE2A9C41AD5B49000A24D7E /* usersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE2A9C31AD5B49000A24D7E /* usersVC.swift */; };
 		9DE2A9C61AD5B5DD00A24D7E /* resultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE2A9C51AD5B5DD00A24D7E /* resultsCell.swift */; };
+		9DE6F36D1AEF0876004E63C6 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE6F36C1AEF0876004E63C6 /* logo.png */; };
+		9DE6F3701AEF0B9B004E63C6 /* default_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE6F36E1AEF0B9B004E63C6 /* default_gray.png */; };
+		9DE6F3711AEF0B9B004E63C6 /* default_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE6F36F1AEF0B9B004E63C6 /* default_white.png */; };
 		9DF3DD7E1ACA14EF004D150C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3DD7D1ACA14EF004D150C /* AppDelegate.swift */; };
 		9DF3DD801ACA14EF004D150C /* loginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3DD7F1ACA14EF004D150C /* loginVC.swift */; };
 		9DF3DD831ACA14EF004D150C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DF3DD811ACA14EF004D150C /* Main.storyboard */; };
@@ -62,7 +68,6 @@
 		9D014BAD1AEA28D500F02FED /* 5star.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 5star.gif; sourceTree = "<group>"; };
 		9D151DD31AD72587001EF774 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		9D151DD51AD72A5D001EF774 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		9D1777671ACDFDE400023F2E /* Rick+and+morty+for+a+hundred+years+rick+and+morty+_406a982d46ccc523799e6aef45080387.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rick+and+morty+for+a+hundred+years+rick+and+morty+_406a982d46ccc523799e6aef45080387.png"; sourceTree = "<group>"; };
 		9D23FC451AD5E846004C085D /* conversationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = conversationVC.swift; sourceTree = "<group>"; };
 		9D244AC91ACD1AEA001100B7 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		9D244ACB1ACD1AF2001100B7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -77,13 +82,20 @@
 		9D244ADD1ACD1B4D001100B7 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		9D244AE01ACD1B8F001100B7 /* ChatApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChatApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		9D244AE11ACD1B8F001100B7 /* ChatAppHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatAppHeader.m; sourceTree = "<group>"; };
-		9D6F696B1AE5D47900C4955D /* no-photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-photo.png"; sourceTree = "<group>"; };
+		9D3098CB1AF1511200A88E89 /* logo_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_small.png; sourceTree = "<group>"; };
+		9D3098CD1AF1540200A88E89 /* logo_loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_loading.png; sourceTree = "<group>"; };
+		9D3098D11AF15C9400A88E89 /* time_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = time_btn.png; sourceTree = "<group>"; };
+		9D3098D31AF15EDC00A88E89 /* logo_small_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_small_light.png; sourceTree = "<group>"; };
+		9D3098D51AF1702300A88E89 /* time_btn_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = time_btn_selected.png; sourceTree = "<group>"; };
 		9D7F034A1ADEE66000B30AFF /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		9D7F034B1ADEE66000B30AFF /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		9D8FDE831ADC4F0B00D3BC7F /* tripCompletedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tripCompletedVC.swift; sourceTree = "<group>"; };
 		9D8FDE851ADC51BA00D3BC7F /* tripPlanVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tripPlanVC.swift; sourceTree = "<group>"; };
 		9DE2A9C31AD5B49000A24D7E /* usersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = usersVC.swift; sourceTree = "<group>"; };
 		9DE2A9C51AD5B5DD00A24D7E /* resultsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = resultsCell.swift; sourceTree = "<group>"; };
+		9DE6F36C1AEF0876004E63C6 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		9DE6F36E1AEF0B9B004E63C6 /* default_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_gray.png; sourceTree = "<group>"; };
+		9DE6F36F1AEF0B9B004E63C6 /* default_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_white.png; sourceTree = "<group>"; };
 		9DF3DD781ACA14EF004D150C /* ChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF3DD7C1ACA14EF004D150C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DF3DD7D1ACA14EF004D150C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -195,13 +207,19 @@
 		9DF3DD7B1ACA14EF004D150C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9D014BA91AEA28D500F02FED /* 3star.gif */,
-				9D014BAA1AEA28D500F02FED /* 4star.gif */,
+				9D3098D51AF1702300A88E89 /* time_btn_selected.png */,
+				9D3098D31AF15EDC00A88E89 /* logo_small_light.png */,
+				9D3098D11AF15C9400A88E89 /* time_btn.png */,
+				9D3098CD1AF1540200A88E89 /* logo_loading.png */,
+				9D3098CB1AF1511200A88E89 /* logo_small.png */,
+				9DE6F36E1AEF0B9B004E63C6 /* default_gray.png */,
+				9DE6F36F1AEF0B9B004E63C6 /* default_white.png */,
+				9DE6F36C1AEF0876004E63C6 /* logo.png */,
 				9D014BAB1AEA28D500F02FED /* 1star.gif */,
 				9D014BAC1AEA28D500F02FED /* 2star.gif */,
+				9D014BA91AEA28D500F02FED /* 3star.gif */,
+				9D014BAA1AEA28D500F02FED /* 4star.gif */,
 				9D014BAD1AEA28D500F02FED /* 5star.gif */,
-				9D6F696B1AE5D47900C4955D /* no-photo.png */,
-				9D1777671ACDFDE400023F2E /* Rick+and+morty+for+a+hundred+years+rick+and+morty+_406a982d46ccc523799e6aef45080387.png */,
 				9DF3DD7C1ACA14EF004D150C /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -307,14 +325,20 @@
 			files = (
 				9D014BB01AEA28D500F02FED /* 1star.gif in Resources */,
 				9D014BAF1AEA28D500F02FED /* 4star.gif in Resources */,
+				9D3098D61AF1702300A88E89 /* time_btn_selected.png in Resources */,
+				9D3098CC1AF1511200A88E89 /* logo_small.png in Resources */,
+				9D3098D21AF15C9400A88E89 /* time_btn.png in Resources */,
+				9DE6F3701AEF0B9B004E63C6 /* default_gray.png in Resources */,
+				9DE6F36D1AEF0876004E63C6 /* logo.png in Resources */,
 				9D014BAE1AEA28D500F02FED /* 3star.gif in Resources */,
 				9DF3DD831ACA14EF004D150C /* Main.storyboard in Resources */,
-				9D1777681ACDFDE400023F2E /* Rick+and+morty+for+a+hundred+years+rick+and+morty+_406a982d46ccc523799e6aef45080387.png in Resources */,
-				9D6F696C1AE5D47900C4955D /* no-photo.png in Resources */,
+				9DE6F3711AEF0B9B004E63C6 /* default_white.png in Resources */,
 				9DF3DD881ACA14EF004D150C /* LaunchScreen.xib in Resources */,
 				9DF3DD851ACA14EF004D150C /* Images.xcassets in Resources */,
 				9D014BB21AEA28D500F02FED /* 5star.gif in Resources */,
+				9D3098CE1AF1540200A88E89 /* logo_loading.png in Resources */,
 				9D014BB11AEA28D500F02FED /* 2star.gif in Resources */,
+				9D3098D41AF15EDC00A88E89 /* logo_small_light.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

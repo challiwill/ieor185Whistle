@@ -10,8 +10,8 @@ import UIKit
 
 class loginVC: UIViewController {
 
-    
-    @IBOutlet weak var welcomeLbl: UILabel!
+    @IBOutlet weak var logoImg: UIImageView!
+    @IBOutlet weak var tagLbl: UILabel!
     @IBOutlet weak var usernameTxt: UITextField!
     @IBOutlet weak var passwordTxt: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
@@ -24,11 +24,12 @@ class loginVC: UIViewController {
         let theWidth = view.frame.size.width
         let theHeight = view.frame.size.height
         
-        welcomeLbl.center = CGPointMake(theWidth/2, 130)
-        usernameTxt.frame = CGRectMake(16, 200, theWidth-32, 30)
-        passwordTxt.frame = CGRectMake(16, 240, theWidth-32, 30)
-        loginBtn.center = CGPointMake(theWidth/2, 330)
-        signupBtn.center = CGPointMake(theWidth/2, theHeight-30)
+        logoImg.center = CGPointMake(theWidth/2, 114)
+        tagLbl.center = CGPointMake(theWidth/2, 208)
+        usernameTxt.frame = CGRectMake(40, 257, theWidth-80, 30)
+        passwordTxt.frame = CGRectMake(40, 289, theWidth-80, 30)
+        loginBtn.frame = CGRectMake(40, 339, theWidth/2-40, 45)
+        signupBtn.frame = CGRectMake(theWidth/2, 339, theWidth/2-40, 45)
         
         //TODO add check to see if already logged in
         //        var fbLogin:FBSDKLoginButton = FBSDKLoginButton()
@@ -63,7 +64,6 @@ class loginVC: UIViewController {
             
             if logInError == nil {
                 println("log in")
-                tripPlanSource = 1
                 self.performSegueWithIdentifier("goToTripPlanVC", sender: self)
             } else {
                 println("error log in")
