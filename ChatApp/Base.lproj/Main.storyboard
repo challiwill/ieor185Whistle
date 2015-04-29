@@ -233,11 +233,6 @@
                                                 <action selector="logoutBtn_click:" destination="a7J-aF-yfy" id="7dV-OT-Wu2"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Go" id="Ge8-5x-IdQ">
-                                            <connections>
-                                                <action selector="goBtn_click:" destination="a7J-aF-yfy" id="J56-7I-0qb"/>
-                                            </connections>
-                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -271,6 +266,19 @@
                                 <color key="textColor" red="0.14117647059999999" green="0.48627450979999998" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1tb-Jm-9Gk">
+                                <rect key="frame" x="60" y="381" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                <state key="normal" title="5" backgroundImage="time_btn.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" title="5" backgroundImage="time_btn_selected.png"/>
+                                <connections>
+                                    <action selector="timeOneBtn_click:" destination="a7J-aF-yfy" eventType="touchUpInside" id="lw1-gu-R2R"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mbz-C6-4Fo">
                                 <rect key="frame" x="135" y="382" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -300,17 +308,17 @@
                                 <color key="textColor" red="0.14117647059999999" green="0.48627450979999998" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1tb-Jm-9Gk">
-                                <rect key="frame" x="60" y="381" width="50" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PiQ-r7-b9p">
+                                <rect key="frame" x="-14" y="518" width="345" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
-                                <state key="normal" title="5" backgroundImage="time_btn.png">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.14117647058823529" green="0.15294117647058825" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                <state key="normal" title="GO→">
+                                    <color key="titleColor" red="0.90980392156862744" green="0.91764705882352937" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="selected" title="5" backgroundImage="time_btn_selected.png"/>
                                 <connections>
-                                    <action selector="timeOneBtn_click:" destination="a7J-aF-yfy" eventType="touchUpInside" id="lw1-gu-R2R"/>
+                                    <action selector="goBtn_click:" destination="a7J-aF-yfy" eventType="touchUpInside" id="V96-Tt-SaU"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -321,7 +329,6 @@
                     <navigationItem key="navigationItem" id="BF3-XV-z27">
                         <connections>
                             <outlet property="leftBarButtonItem" destination="SbB-RK-gIR" id="tau-dx-Dhc"/>
-                            <outlet property="rightBarButtonItem" destination="Ge8-5x-IdQ" id="TlL-tR-N9h"/>
                         </connections>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>

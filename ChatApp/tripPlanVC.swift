@@ -63,7 +63,7 @@ class tripPlanVC: UIViewController, UITextFieldDelegate {
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
         self.navigationController?.navigationBar.barTintColor  = UIColor(red: 0.141, green: 0.486, blue: 0.671, alpha: 1)
         self.navigationController?.navigationBar.tintColor = UIColor(red: 0.808, green: 0.824, blue: 0.831, alpha: 1.0)
         let logo = UIImage(named: "logo_small_light.png")
@@ -99,7 +99,6 @@ class tripPlanVC: UIViewController, UITextFieldDelegate {
         }
 
     }
-
 
     @IBAction func timeOneBtn_click(sender: UIButton) {
         timeTwoBtn.selected = false
