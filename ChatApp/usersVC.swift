@@ -47,7 +47,7 @@ class usersVC: UIViewController, UITableViewDataSource {
         self.resultsLeavingInArray.removeAll(keepCapacity: false)
         self.resultsFeedbackArray.removeAll(keepCapacity: false)
         
-        let tripsPredicate = NSPredicate(format: "userEmail != '"+userName+"'")
+        let tripsPredicate = NSPredicate(format: "userEmail != '" + userName + "' && to == '" + (myTrip["to"] as! String) + "'")
         var tripsQuery = PFQuery(className: "Trip", predicate: tripsPredicate)
         var trips = tripsQuery.findObjects()
         // TODO make it not add the same person multiple times even if they have multiple trips. just use most recent trip

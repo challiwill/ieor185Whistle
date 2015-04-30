@@ -214,7 +214,10 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Dlh-vE-TGD">
                                 <rect key="frame" x="10" y="216" width="300" height="83"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">THANK YOU FOR USING WALKMEAND FOR YOUR PEER FEEDBACK. WE DEPENDON THIS FEEDBACK TO MAKE YOUREXPERIENCE AS SAFE AS POSSIBLE.</string>
+                                <string key="text">THANK YOU FOR USING WALKME
+AND FOR YOUR PEER FEEDBACK. WE DEPEND
+ON THIS FEEDBACK TO MAKE YOUR
+EXPERIENCE AS SAFE AS POSSIBLE.</string>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="10"/>
                                 <color key="textColor" red="0.80784313725490198" green="0.82352941176470584" blue="0.83137254901960789" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>

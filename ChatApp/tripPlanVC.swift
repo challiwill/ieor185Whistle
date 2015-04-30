@@ -23,36 +23,7 @@ class tripPlanVC: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         // TODO relative placement of objects
         let theWidth = view.frame.size.width
-        
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWasShown:", name: UIKeyboardDidShowNotification, object: nil)
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
     }
-
-//    func keyboardWasShown(notification:NSNotification) {
-//        if (UIScreen.mainScreen().bounds.height == 568) {
-//            let dict:NSDictionary = notification.userInfo!
-//            let s:NSValue = dict.valueForKey(UIKeyboardFrameEndUserInfoKey) as! NSValue
-//            let rect:CGRect = s.CGRectValue()
-//            
-//            UIView.animateWithDuration(0.3, delay: 0, options: .CurveLinear, animations: {
-//                self.frameView.frame.origin.y = self.scrollViewOriginalY - rect.height/3
-//                }, completion: {
-//                    (finished:Bool) in
-//            })
-//        }
-//    }
-//
-//    func keyboardWillHide(notification:NSNotification) {
-//        let dict:NSDictionary = notification.userInfo!
-//        let s:NSValue = dict.valueForKey(UIKeyboardFrameEndUserInfoKey) as! NSValue
-//        let rect:CGRect = s.CGRectValue()
-//        
-//        UIView.animateWithDuration(0.3, delay: 0, options: .CurveLinear, animations: {
-//            self.frameView.frame.origin.y = self.scrollViewOriginalY
-//            }, completion: {
-//                (finished:Bool) in
-//        })
-//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -82,7 +53,9 @@ class tripPlanVC: UIViewController, UITextFieldDelegate {
         let end = NSDate(timeIntervalSinceNow: leavingIn*60)
         trip["userEmail"] = user!.email
         trip["leavingBegin"] = begin
+        // TODO set ["from"] field to geolocation
         trip["leavingEnd"] = end
+        trip["to"] = goingToTxt.text
         trip.saveInBackgroundWithBlock {
             (success: Bool, error:NSError?) -> Void in
             

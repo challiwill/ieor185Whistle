@@ -30,7 +30,6 @@ class resultsCell: UITableViewCell {
         profileImg.clipsToBounds = true
         profileNameLbl.center = CGPointMake(230, 25)
         companyLbl.center = CGPointMake(230, 45)
-        leavingInLbl.center = CGPointMake(235, 65)
         ratingImg.center = CGPointMake(200, 87)
     }
 
