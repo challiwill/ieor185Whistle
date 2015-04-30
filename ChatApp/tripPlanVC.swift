@@ -11,7 +11,6 @@ import Foundation
 
 class tripPlanVC: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var leavingFromTxt: UITextField!
     @IBOutlet weak var goingToTxt: UITextField!
     @IBOutlet weak var timeOneBtn: UIButton!
     @IBOutlet weak var timeTwoBtn: UIButton!
@@ -22,40 +21,38 @@ class tripPlanVC: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.title = "Plan Trip"
         // TODO relative placement of objects
         let theWidth = view.frame.size.width
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWasShown:", name: UIKeyboardDidShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWasShown:", name: UIKeyboardDidShowNotification, object: nil)
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
     }
 
-    func keyboardWasShown(notification:NSNotification) {
-        if (UIScreen.mainScreen().bounds.height == 568) {
-            let dict:NSDictionary = notification.userInfo!
-            let s:NSValue = dict.valueForKey(UIKeyboardFrameEndUserInfoKey) as! NSValue
-            let rect:CGRect = s.CGRectValue()
-            
-            UIView.animateWithDuration(0.3, delay: 0, options: .CurveLinear, animations: {
-                self.frameView.frame.origin.y = self.scrollViewOriginalY - rect.height/3
-                }, completion: {
-                    (finished:Bool) in
-            })
-        }
-    }
-
-    func keyboardWillHide(notification:NSNotification) {
-        let dict:NSDictionary = notification.userInfo!
-        let s:NSValue = dict.valueForKey(UIKeyboardFrameEndUserInfoKey) as! NSValue
-        let rect:CGRect = s.CGRectValue()
-        
-        UIView.animateWithDuration(0.3, delay: 0, options: .CurveLinear, animations: {
-            self.frameView.frame.origin.y = self.scrollViewOriginalY
-            }, completion: {
-                (finished:Bool) in
-        })
-    }
+//    func keyboardWasShown(notification:NSNotification) {
+//        if (UIScreen.mainScreen().bounds.height == 568) {
+//            let dict:NSDictionary = notification.userInfo!
+//            let s:NSValue = dict.valueForKey(UIKeyboardFrameEndUserInfoKey) as! NSValue
+//            let rect:CGRect = s.CGRectValue()
+//            
+//            UIView.animateWithDuration(0.3, delay: 0, options: .CurveLinear, animations: {
+//                self.frameView.frame.origin.y = self.scrollViewOriginalY - rect.height/3
+//                }, completion: {
+//                    (finished:Bool) in
+//            })
+//        }
+//    }
+//
+//    func keyboardWillHide(notification:NSNotification) {
+//        let dict:NSDictionary = notification.userInfo!
+//        let s:NSValue = dict.valueForKey(UIKeyboardFrameEndUserInfoKey) as! NSValue
+//        let rect:CGRect = s.CGRectValue()
+//        
+//        UIView.animateWithDuration(0.3, delay: 0, options: .CurveLinear, animations: {
+//            self.frameView.frame.origin.y = self.scrollViewOriginalY
+//            }, completion: {
+//                (finished:Bool) in
+//        })
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -101,6 +98,7 @@ class tripPlanVC: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func timeOneBtn_click(sender: UIButton) {
+        self.view.endEditing(true)
         timeTwoBtn.selected = false
         timeThreeBtn.selected = false
         sender.selected = true
@@ -108,6 +106,7 @@ class tripPlanVC: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func timeTwoBtn_click(sender: UIButton) {
+        self.view.endEditing(true)
         timeOneBtn.selected = false
         timeThreeBtn.selected = false
         sender.selected = true
@@ -115,6 +114,7 @@ class tripPlanVC: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func timeThreeBtn_click(sender: UIButton) {
+        self.view.endEditing(true)
         timeOneBtn.selected = false
         timeTwoBtn.selected = false
         sender.selected = true
