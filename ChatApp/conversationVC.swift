@@ -162,6 +162,24 @@ class conversationVC: UIViewController, UIScrollViewDelegate, UITextViewDelegate
                 }
             }
         }
+
+        if self.messageArray.count == 0 {
+            let theWidth = self.view.frame.size.width
+            let noMsgLbl = UILabel(frame: CGRectMake(5, 70, theWidth-10, 100))
+            noMsgLbl.text = "Please use this in-app chat to coordinate meeting up without the pressure to share personal contact information."
+            noMsgLbl.lineBreakMode = NSLineBreakMode.ByWordWrapping
+            noMsgLbl.backgroundColor = UIColor.lightGrayColor()
+            noMsgLbl.textColor = UIColor.darkGrayColor()
+            noMsgLbl.numberOfLines = 0
+            noMsgLbl.textAlignment = NSTextAlignment.Center
+            noMsgLbl.layer.masksToBounds = true
+            noMsgLbl.layer.cornerRadius = 10
+            noMsgLbl.layer.zPosition = 30
+            noMsgLbl.sizeToFit()
+            noMsgLbl.frame.size.width = theWidth-10
+            noMsgLbl.tag = 999
+            self.resultsScrollView.addSubview(noMsgLbl)
+        }
     }
     
     func refreshResults() {
@@ -196,7 +214,9 @@ class conversationVC: UIViewController, UIScrollViewDelegate, UITextViewDelegate
                 }
                 
                 for subView in self.resultsScrollView.subviews {
-                    subView.removeFromSuperview()
+                    if subView.tag != 999 {
+                        subView.removeFromSuperview()
+                    }
                 }
                 
                 for var i = 0; i <= self.messageArray.count-1; i++ {
@@ -278,6 +298,12 @@ class conversationVC: UIViewController, UIScrollViewDelegate, UITextViewDelegate
                     
                     var bottomOffset:CGPoint = CGPointMake(0, self.resultsScrollView.contentSize.height - self.resultsScrollView.bounds.size.height)
                     self.resultsScrollView.setContentOffset(bottomOffset, animated: false)
+
+                    for subView in self.resultsScrollView.subviews {
+                        if subView.tag == 999 {
+                            subView.removeFromSuperview()
+                        }
+                    }
                 }
             }
             
