@@ -52,8 +52,9 @@ class usersVC: UIViewController, UITableViewDataSource {
         var trips = tripsQuery.findObjects()
         // TODO make it not add the same person multiple times even if they have multiple trips. just use most recent trip
         for trip in trips! {
-            if (((trip["leavingEnd"] as! NSDate).compare(myTrip["leavingEnd"] as! NSDate) == NSComparisonResult.OrderedAscending ||
-                (trip["leavingEnd"] as! NSDate).compare(myTrip["leavingEnd"] as! NSDate) == NSComparisonResult.OrderedSame) &&
+            if (
+//                ((trip["leavingEnd"] as! NSDate).compare(myTrip["leavingEnd"] as! NSDate) == NSComparisonResult.OrderedAscending ||
+//                (trip["leavingEnd"] as! NSDate).compare(myTrip["leavingEnd"] as! NSDate) == NSComparisonResult.OrderedSame) &&
                     (trip["leavingEnd"] as! NSDate).compare(NSDate()) == NSComparisonResult.OrderedDescending) {
                 let userPredicate = NSPredicate(format: "username == '"+(trip["userEmail"] as! String)+"'")
                 var userQuery = PFQuery(className: "_User", predicate: userPredicate)
