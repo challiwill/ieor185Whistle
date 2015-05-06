@@ -65,7 +65,13 @@ class usersVC: UIViewController, UITableViewDataSource {
                             self.resultsProfileNameArray.append(user["profileName"] as! String)
                             self.resultsImageFiles.append(user["photo"] as! PFFile)
                             self.resultsCompanyNameArray.append(user["company"] as! String)
-                            self.resultsFeedbackArray.append(user["rating"] as! Float)
+                            var ratingQuery = PFQuery(className: "Rating")
+                            ratingQuery.whereKey("username", equalTo: user.username!!)
+                            var ratings = ratingQuery.findObjects()
+                            for rating in ratings! {
+                                var avg = 5*((rating["score"] as! Float)/(rating["raters"] as! Float))
+                                self.resultsFeedbackArray.append(floor(avg))
+                            }
                             
                             self.resultsTable.reloadData()
                         }
