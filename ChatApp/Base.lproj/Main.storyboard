@@ -606,6 +606,7 @@ EXPERIENCE AS SAFE AS POSSIBLE.</string>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="doneBtn_click:" destination="5fZ-yH-5B3" eventType="touchUpInside" id="tid-1N-XX5"/>
                                     <segue destination="vVL-Ms-A6d" kind="push" identifier="goToThankYou" id="SKR-gf-KaA"/>
                                 </connections>
                             </button>

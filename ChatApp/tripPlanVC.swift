@@ -65,6 +65,7 @@ class tripPlanVC: UIViewController, UITextFieldDelegate {
                 self.performSegueWithIdentifier("goToUsersVC", sender: self)
             } else {
                 // TODO make error message that user sees
+                println("can't save trip")
             }
         }
 

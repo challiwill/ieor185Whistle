@@ -133,12 +133,23 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
             (succeeded:Bool, signUpError:NSError?) -> Void in
             if signUpError == nil {
                 println("signup")
-                self.performSegueWithIdentifier("goToTripPlanVC2", sender: self)
             } else {
                 println("can't signup")
             }
         }
-    }
-    
-    
+        
+        var rating = PFObject(className: "Rating")
+        rating["username"] = self.usernameTxt.text
+        rating["score"] = 1
+        rating["raters"] = 1
+        rating.saveInBackgroundWithBlock {
+            (success: Bool, error: NSError?) -> Void in
+            if (success) {
+                println("rating made")
+                self.performSegueWithIdentifier("goToTripPlanVC2", sender: self)
+            } else {
+                println("can't make rating")
+            }
+        }
+    }    
 }

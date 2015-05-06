@@ -57,4 +57,17 @@ class tripCompletedVC: UIViewController {
     }
     
     
+    @IBAction func doneBtn_click(sender: AnyObject) {
+        // TODO put error if no yes/no selected?
+        // TODO use other rating object
+        var query = PFQuery(className:"Rating")
+        query.whereKey("username", equalTo: otherName)
+        var objects = query.findObjects()
+        for rating in objects! {
+            println("incrmenting \(otherName) rating by \(self.feltSafe)")
+            (rating as! PFObject).incrementKey("raters")
+            (rating as! PFObject).incrementKey("score", byAmount: self.feltSafe)
+            (rating as! PFObject).saveInBackground()
+        }
+    }
 }
