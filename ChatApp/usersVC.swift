@@ -32,6 +32,7 @@ class usersVC: UIViewController, UITableViewDataSource {
         resultsTable.frame = CGRectMake(0, 0, theWidth, theHeight-64)
         
         userName = PFUser.currentUser()!.username!
+        var refreshTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "refreshUsers", userInfo: nil, repeats: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,18 +48,29 @@ class usersVC: UIViewController, UITableViewDataSource {
         self.resultsLeavingInArray.removeAll(keepCapacity: false)
         self.resultsFeedbackArray.removeAll(keepCapacity: false)
         
+       refreshUsers()
+    }
+    
+    func refreshUsers() {
+        resultsUsernameArray.removeAll(keepCapacity: false)
+        resultsProfileNameArray.removeAll(keepCapacity: false)
+        resultsImageFiles.removeAll(keepCapacity: false)
+        resultsCompanyNameArray.removeAll(keepCapacity: false)
+        resultsLeavingInArray.removeAll(keepCapacity: false)
+        resultsFeedbackArray.removeAll(keepCapacity: false)
+        
         let tripsPredicate = NSPredicate(format: "userEmail != '" + userName + "' && to == '" + (myTrip["to"] as! String) + "'")
         var tripsQuery = PFQuery(className: "Trip", predicate: tripsPredicate)
         var trips = tripsQuery.findObjects()
         // TODO make it not add the same person multiple times even if they have multiple trips. just use most recent trip
         for trip in trips! {
             if (
-//                ((trip["leavingEnd"] as! NSDate).compare(myTrip["leavingEnd"] as! NSDate) == NSComparisonResult.OrderedAscending ||
-//                (trip["leavingEnd"] as! NSDate).compare(myTrip["leavingEnd"] as! NSDate) == NSComparisonResult.OrderedSame) &&
-                    (trip["leavingEnd"] as! NSDate).compare(NSDate()) == NSComparisonResult.OrderedDescending) {
-                let userPredicate = NSPredicate(format: "username == '"+(trip["userEmail"] as! String)+"'")
-                var userQuery = PFQuery(className: "_User", predicate: userPredicate)
-                var users = userQuery.findObjects()
+                //                ((trip["leavingEnd"] as! NSDate).compare(myTrip["leavingEnd"] as! NSDate) == NSComparisonResult.OrderedAscending ||
+                //                (trip["leavingEnd"] as! NSDate).compare(myTrip["leavingEnd"] as! NSDate) == NSComparisonResult.OrderedSame) &&
+                (trip["leavingEnd"] as! NSDate).compare(NSDate()) == NSComparisonResult.OrderedDescending) {
+                    let userPredicate = NSPredicate(format: "username == '"+(trip["userEmail"] as! String)+"'")
+                    var userQuery = PFQuery(className: "_User", predicate: userPredicate)
+                    var users = userQuery.findObjects()
                     for user in users! {
                         if (!contains(resultsUsernameArray, user.username!!)) {
                             self.resultsUsernameArray.append(user.username!!)
