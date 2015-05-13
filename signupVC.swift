@@ -146,7 +146,7 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
             (success: Bool, error: NSError?) -> Void in
             if (success) {
                 println("rating made")
-                self.performSegueWithIdentifier("goToTripPlanVC2", sender: self)
+                self.performSegueWithIdentifier("goToLoginVC", sender: self)
             } else {
                 println("can't make rating")
             }

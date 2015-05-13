@@ -62,7 +62,7 @@ class loginVC: UIViewController {
         PFUser.logInWithUsernameInBackground(usernameTxt.text!, password: passwordTxt.text!) {
             (user:PFUser?, logInError:NSError?) -> Void in
             
-            if logInError == nil {
+            if (user != nil && logInError == nil) {
                 println("log in")
                 self.performSegueWithIdentifier("goToTripPlanVC", sender: self)
             } else {

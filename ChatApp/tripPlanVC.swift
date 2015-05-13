@@ -96,31 +96,35 @@ class tripPlanVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelega
     }
 
     @IBAction func goBtn_click(sender: AnyObject) {
-        //        TODO Do some sort of validity check
-        //        TODO make sure to sort users
-        // TODO do validity test on numbers/dates and accept multiple input styles
-        let trip = PFObject(className: "Trip")
-        let user = PFUser.currentUser()
-        let begin = NSDate()
-        let end = NSDate(timeIntervalSinceNow: leavingIn*60)
-        trip["userEmail"] = user!.email
-        trip["leavingBegin"] = begin
-        // TODO set ["from"] field to geolocation
-        trip["leavingEnd"] = end
-        trip["to"] = goingToTxt.text
-        trip.saveInBackgroundWithBlock {
-            (success: Bool, error:NSError?) -> Void in
-            
-            if success == true {
-                println("trip saved")
-                myTrip = trip
-                self.performSegueWithIdentifier("goToUsersVC", sender: self)
+        if let user = PFUser.currentUser() {
+            if ((user["emailVerified"] as! Bool)) {
+                let trip = PFObject(className: "Trip")
+                let begin = NSDate()
+                let end = NSDate(timeIntervalSinceNow: leavingIn*60)
+                trip["userEmail"] = user.email
+                trip["leavingBegin"] = begin
+                // TODO set ["from"] field to geolocation
+                trip["leavingEnd"] = end
+                trip["to"] = goingToTxt.text
+                trip.saveInBackgroundWithBlock {
+                    (success: Bool, error:NSError?) -> Void in
+                    
+                    if success == true {
+                        println("trip saved")
+                        myTrip = trip
+                        self.performSegueWithIdentifier("goToUsersVC", sender: self)
+                    } else {
+                        // TODO make error message that user sees
+                        println("can't save trip")
+                    }
+                }
             } else {
-                // TODO make error message that user sees
-                println("can't save trip")
+                PFUser.logOut()
+                self.navigationController?.popToRootViewControllerAnimated(true)
             }
+        } else {
+            self.navigationController?.popToRootViewControllerAnimated(true)
         }
-
     }
 
     @IBAction func timeOneBtn_click(sender: UIButton) {

@@ -68,6 +68,13 @@
                                     <segue destination="mGK-UK-2f5" kind="push" identifier="goToSignUpVC" id="qoT-Ng-Gxa"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For security reasons, you must verify your email before using the app." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9gW-gf-kuJ">
+                                <rect key="frame" x="10" y="407" width="300" height="106"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.14117647058823529" green="0.15294117647058825" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.98823529409999999" green="0.80784313730000001" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -130,7 +137,7 @@
                                     <outlet property="delegate" destination="mGK-UK-2f5" id="eqT-Jq-ouM"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" minimumFontSize="17" id="yNV-5i-Qwm">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" id="yNV-5i-Qwm">
                                 <rect key="frame" x="27" y="323" width="272" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -152,6 +159,7 @@
                                 </state>
                                 <connections>
                                     <action selector="signupBtn_click:" destination="mGK-UK-2f5" eventType="touchUpInside" id="qcT-1I-rie"/>
+                                    <segue destination="vXZ-lx-hvc" kind="push" identifier="goToLoginVC" id="UJw-Kp-jfR"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_white.png" id="QFI-gi-7ZI">
@@ -178,6 +186,13 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For security reasons, you must verify your email before using the app." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KXb-nH-1QL">
+                                <rect key="frame" x="10" y="453" width="300" height="106"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.14117647058823529" green="0.15294117647058825" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.98823529409999999" green="0.80784313730000001" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -192,12 +207,11 @@
                         <outlet property="signupBtn" destination="T8C-y1-MxE" id="GP7-U9-U5q"/>
                         <outlet property="underlineLbl" destination="amJ-NW-IMo" id="iae-Df-0Qo"/>
                         <outlet property="usernameTxt" destination="DWY-6U-PC9" id="iWN-88-K1P"/>
-                        <segue destination="a7J-aF-yfy" kind="push" identifier="goToTripPlanVC2" id="fuk-xE-W1j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5C4-mj-JO3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1121" y="303"/>
+            <point key="canvasLocation" x="1187" y="-417"/>
         </scene>
         <!--Thank YouVC-->
         <scene sceneID="qbR-dV-pfZ">
@@ -668,6 +682,7 @@ EXPERIENCE AS SAFE AS POSSIBLE.</string>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="UJw-Kp-jfR"/>
         <segue reference="dZ0-ZM-ifL"/>
     </inferredMetricsTieBreakers>
 </document>
