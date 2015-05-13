@@ -116,14 +116,14 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
     }
     
     @IBAction func signupBtn_click(sender: AnyObject) {
-        // TODO validate email here!
         var user = PFUser()
         user.username = usernameTxt.text
         user.password = passwordTxt.text
         user.email = usernameTxt.text
         user["profileName"] = profileNameTxt.text
         user["company"] = companyNameTxt.text
-        user["rating"] = 0
+        var email = split(usernameTxt.text) {$0 == "@"}
+        user["domain"] = email[1]
         
         let imageData = UIImagePNGRepresentation(self.profileImg.image)
         let imageFile = PFFile(name:"profilePhoto.png", data: imageData)

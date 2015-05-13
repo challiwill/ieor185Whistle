@@ -84,6 +84,7 @@ class tripPlanVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelega
                 // TODO set ["from"] field to geolocation
                 trip["leavingEnd"] = end
                 trip["to"] = goingToTxt.text
+                trip["domain"] = user["domain"]
                 trip.saveInBackgroundWithBlock {
                     (success: Bool, error:NSError?) -> Void in
                     
