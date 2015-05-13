@@ -159,7 +159,6 @@
                                 </state>
                                 <connections>
                                     <action selector="signupBtn_click:" destination="mGK-UK-2f5" eventType="touchUpInside" id="qcT-1I-rie"/>
-                                    <segue destination="vXZ-lx-hvc" kind="push" identifier="goToLoginVC" id="UJw-Kp-jfR"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_white.png" id="QFI-gi-7ZI">
@@ -207,6 +206,7 @@
                         <outlet property="signupBtn" destination="T8C-y1-MxE" id="GP7-U9-U5q"/>
                         <outlet property="underlineLbl" destination="amJ-NW-IMo" id="iae-Df-0Qo"/>
                         <outlet property="usernameTxt" destination="DWY-6U-PC9" id="iWN-88-K1P"/>
+                        <segue destination="vXZ-lx-hvc" kind="push" identifier="goToLoginVC" id="dFt-81-7aX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5C4-mj-JO3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -682,7 +682,7 @@ EXPERIENCE AS SAFE AS POSSIBLE.</string>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="UJw-Kp-jfR"/>
+        <segue reference="dFt-81-7aX"/>
         <segue reference="dZ0-ZM-ifL"/>
     </inferredMetricsTieBreakers>
 </document>

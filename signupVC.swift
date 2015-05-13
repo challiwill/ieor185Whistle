@@ -116,6 +116,7 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
     }
     
     @IBAction func signupBtn_click(sender: AnyObject) {
+        // TODO handle when there is no input data (or not enough)
         var user = PFUser()
         user.username = usernameTxt.text
         user.password = passwordTxt.text
