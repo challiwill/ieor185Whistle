@@ -20,7 +20,7 @@ class tripCompletedVC: UIViewController {
     @IBOutlet weak var qMarkLbl: UILabel!
     
     var feltSafe:Int = 1
-    
+         
     override func viewDidLoad() {
         super.viewDidLoad()
 //        TODO set relative positioning

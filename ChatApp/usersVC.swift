@@ -32,7 +32,7 @@ class usersVC: UIViewController, UITableViewDataSource {
         resultsTable.frame = CGRectMake(0, 0, theWidth, theHeight-64)
         
         userName = PFUser.currentUser()!.username!
-        var refreshTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "refreshUsers", userInfo: nil, repeats: true)
+        var refreshTimer = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: "refreshUsers", userInfo: nil, repeats: true)
     }
 
     override func didReceiveMemoryWarning() {

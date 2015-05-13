@@ -70,7 +70,7 @@ class conversationVC: UIViewController, UIScrollViewDelegate, UITextViewDelegate
         tapScrollViewGesture.numberOfTapsRequired = 1
         resultsScrollView.addGestureRecognizer(tapScrollViewGesture)
 
-        var refreshTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "refreshResults", userInfo: nil, repeats: true)
+        var refreshTimer = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: "refreshResults", userInfo: nil, repeats: true)
     }
     
     func didTapScrollView() {
