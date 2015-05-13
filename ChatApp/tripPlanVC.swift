@@ -48,38 +48,16 @@ class tripPlanVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelega
     
     // Called when new locations available
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-
-        // TODO decide b/w placemarks vs lat/lng
-//        let cl = locations[0] as! CLLocation
-//        println(cl.coordinate.latitude)
-//        println(cl.coordinate.longitude)
-
-        CLGeocoder().reverseGeocodeLocation(manager.location, completionHandler: {(placemarks, error)->Void in
-            if (error != nil) {
-                println("Reverse geocoder failed with error " + error.localizedDescription)
-                return
-            }
-            if (placemarks.count > 0) {
-                let pm = placemarks[0] as! CLPlacemark
-                self.displayLocationInfo(pm)
-            } else {
-                println("Problem with the data received from geocoder")
-            }
-        })
+        let cl = locations[0] as! CLLocation
+        self.displayLocationInfo(cl)
     }
     
-    func displayLocationInfo(placemark: CLPlacemark!) {
+    func displayLocationInfo(placemark: CLLocation!) {
         if (placemark != nil) {
             // stop updating to save battery
             locationManager.stopUpdatingLocation()
-            println(placemark.subThoroughfare != nil ? placemark.subThoroughfare: "-")
-            println(placemark.thoroughfare != nil ? placemark.thoroughfare: "-")
-            println(placemark.locality != nil ? placemark.locality: "-")
-            println(placemark.postalCode != nil ? placemark.postalCode: "-")
-            println(placemark.administrativeArea != nil ? placemark.administrativeArea : "-")
-            println(placemark.country != nil ? placemark.country : "-")
-            // do something to iterate through all areas of interst?
-            println(placemark.areasOfInterest != nil ? placemark.areasOfInterest[0] : "-")
+            println(placemark.coordinate.latitude)
+            println(placemark.coordinate.longitude)
         }
     }
     
