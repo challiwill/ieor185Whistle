@@ -59,37 +59,36 @@ class usersVC: UIViewController, UITableViewDataSource {
         resultsLeavingInArray.removeAll(keepCapacity: false)
         resultsFeedbackArray.removeAll(keepCapacity: false)
         
-        let tripsPredicate = NSPredicate(format: "userEmail != '" + userName +
-                "' && to == '" + (myTrip["to"] as! String) +
-            "' && domain == '" + (myTrip["domain"] as! String) + "'")
-        var tripsQuery = PFQuery(className: "Trip", predicate: tripsPredicate)
+        var tripsQuery = PFQuery(className: "Trip")
+        tripsQuery.whereKey("to", equalTo: myTrip["to"] as! String)
+        tripsQuery.whereKey("domain", equalTo: myTrip["domain"] as! String)
+        tripsQuery.whereKey("userEmail", notEqualTo: userName)
+        tripsQuery.whereKey("leavingEnd", greaterThan: NSDate())
+        tripsQuery.whereKey("from", nearGeoPoint: myTrip["from"] as! PFGeoPoint, withinMiles: 0.25)
+        
         var trips = tripsQuery.findObjects()
         // TODO make it not add the same person multiple times even if they have multiple trips. just use most recent trip
         for trip in trips! {
-            if (
-                //                ((trip["leavingEnd"] as! NSDate).compare(myTrip["leavingEnd"] as! NSDate) == NSComparisonResult.OrderedAscending ||
-                //                (trip["leavingEnd"] as! NSDate).compare(myTrip["leavingEnd"] as! NSDate) == NSComparisonResult.OrderedSame) &&
-                (trip["leavingEnd"] as! NSDate).compare(NSDate()) == NSComparisonResult.OrderedDescending) {
-                    let userPredicate = NSPredicate(format: "username == '"+(trip["userEmail"] as! String)+"'")
-                    var userQuery = PFQuery(className: "_User", predicate: userPredicate)
-                    var users = userQuery.findObjects()
-                    for user in users! {
-                        if (!contains(resultsUsernameArray, user.username!!)) {
-                            self.resultsUsernameArray.append(user.username!!)
-                            self.resultsProfileNameArray.append(user["profileName"] as! String)
-                            self.resultsImageFiles.append(user["photo"] as! PFFile)
-                            self.resultsCompanyNameArray.append(user["company"] as! String)
-                            var ratingQuery = PFQuery(className: "Rating")
-                            ratingQuery.whereKey("username", equalTo: user.username!!)
-                            var ratings = ratingQuery.findObjects()
-                            for rating in ratings! {
-                                var avg = 5*((rating["score"] as! Float)/(rating["raters"] as! Float))
-                                self.resultsFeedbackArray.append(floor(avg))
-                            }
-                            
-                            self.resultsTable.reloadData()
-                        }
+            var userQuery = PFQuery(className: "_User")
+            userQuery.whereKey("username", equalTo: trip["userEmail"] as! String)
+            
+            var users = userQuery.findObjects()
+            for user in users! {
+                if (!contains(resultsUsernameArray, user.username!!)) {
+                    self.resultsUsernameArray.append(user.username!!)
+                    self.resultsProfileNameArray.append(user["profileName"] as! String)
+                    self.resultsImageFiles.append(user["photo"] as! PFFile)
+                    self.resultsCompanyNameArray.append(user["company"] as! String)
+                    var ratingQuery = PFQuery(className: "Rating")
+                    ratingQuery.whereKey("username", equalTo: user.username!!)
+                    var ratings = ratingQuery.findObjects()
+                    for rating in ratings! {
+                        var avg = 5*((rating["score"] as! Float)/(rating["raters"] as! Float))
+                        self.resultsFeedbackArray.append(floor(avg))
                     }
+                    
+                    self.resultsTable.reloadData()
+                }
             }
         }
     }

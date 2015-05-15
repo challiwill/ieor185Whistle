@@ -20,6 +20,7 @@ class tripPlanVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelega
     var scrollViewOriginalY:CGFloat = 0.0
     var leavingIn:Double = 0
     let locationManager = CLLocationManager()
+    var userGeo:PFGeoPoint = PFGeoPoint(latitude: 0.0, longitude: 0.0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +59,7 @@ class tripPlanVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelega
             locationManager.stopUpdatingLocation()
             println(placemark.coordinate.latitude)
             println(placemark.coordinate.longitude)
+            userGeo = PFGeoPoint(latitude:placemark.coordinate.latitude, longitude:placemark.coordinate.longitude)
         }
     }
     
@@ -81,7 +83,7 @@ class tripPlanVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelega
                 let end = NSDate(timeIntervalSinceNow: leavingIn*60)
                 trip["userEmail"] = user.email
                 trip["leavingBegin"] = begin
-                // TODO set ["from"] field to geolocation
+                trip["from"] = userGeo
                 trip["leavingEnd"] = end
                 trip["to"] = goingToTxt.text
                 trip["domain"] = user["domain"]
