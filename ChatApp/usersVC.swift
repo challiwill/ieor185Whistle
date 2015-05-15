@@ -23,6 +23,7 @@ class usersVC: UIViewController, UITableViewDataSource {
     var resultsCompanyNameArray = [String]()
     var resultsLeavingInArray = [Int]()
     var resultsFeedbackArray = [Float]()
+    var resultsDestinationArray = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,21 +61,23 @@ class usersVC: UIViewController, UITableViewDataSource {
         resultsFeedbackArray.removeAll(keepCapacity: false)
         
         var tripsQuery = PFQuery(className: "Trip")
-        tripsQuery.whereKey("to", equalTo: myTrip["to"] as! String)
+        // for the time being show all nearby users and destination in their userCell
+//        tripsQuery.whereKey("to", equalTo: myTrip["to"] as! String)
         tripsQuery.whereKey("domain", equalTo: myTrip["domain"] as! String)
         tripsQuery.whereKey("userEmail", notEqualTo: userName)
         tripsQuery.whereKey("leavingEnd", greaterThan: NSDate())
         tripsQuery.whereKey("from", nearGeoPoint: myTrip["from"] as! PFGeoPoint, withinMiles: 0.25)
         
         var trips = tripsQuery.findObjects()
-        // TODO make it not add the same person multiple times even if they have multiple trips. just use most recent trip
+        // TODO sort by newest first
         for trip in trips! {
             var userQuery = PFQuery(className: "_User")
             userQuery.whereKey("username", equalTo: trip["userEmail"] as! String)
-            
+
             var users = userQuery.findObjects()
             for user in users! {
                 if (!contains(resultsUsernameArray, user.username!!)) {
+                    self.resultsDestinationArray.append(trip["to"] as! String)
                     self.resultsUsernameArray.append(user.username!!)
                     self.resultsProfileNameArray.append(user["profileName"] as! String)
                     self.resultsImageFiles.append(user["photo"] as! PFFile)
@@ -122,11 +125,11 @@ class usersVC: UIViewController, UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:resultsCell = tableView.dequeueReusableCellWithIdentifier("Cell") as! resultsCell
-        
+
         cell.usernameLbl.text = self.resultsUsernameArray[indexPath.row]
         cell.profileNameLbl.text = self.resultsProfileNameArray[indexPath.row]
         cell.companyLbl.text = self.resultsCompanyNameArray[indexPath.row]
-        // TODO updated leaving in time
+        cell.destinationLbl.text = self.resultsDestinationArray[indexPath.row]
         switch resultsFeedbackArray[indexPath.row] {
         case 1:
             cell.ratingImg.image = UIImage(named: "star1.png")

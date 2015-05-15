@@ -16,7 +16,8 @@ class resultsCell: UITableViewCell {
     @IBOutlet weak var companyLbl: UILabel!
     @IBOutlet weak var leavingInLbl: UILabel!
     @IBOutlet weak var ratingImg: UIImageView!
-    
+    @IBOutlet weak var goingToLbl: UILabel!
+    @IBOutlet weak var destinationLbl: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,7 +30,9 @@ class resultsCell: UITableViewCell {
         profileImg.layer.cornerRadius = profileImg.frame.size.width/2
         profileImg.clipsToBounds = true
         profileNameLbl.center = CGPointMake(230, 25)
-        companyLbl.center = CGPointMake(230, 45)
+        goingToLbl.frame = CGRectMake(122, 37, 64, 15)
+        destinationLbl.center = CGPointMake(230, 45)
+        companyLbl.center = CGPointMake(230, 65)
         ratingImg.center = CGPointMake(200, 87)
     }
 
